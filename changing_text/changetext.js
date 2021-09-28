@@ -22,6 +22,10 @@ jQuery(function( $ ){
     })
   };
 
+  $("a[class*='area-of-greatest-need-donate-btn']").on('click', function() {
+      console.log('This too, means that the buttion has been click, load some javascript');
+  });
+
   console.log('finishing');
 
 });
