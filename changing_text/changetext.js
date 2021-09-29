@@ -22,9 +22,35 @@ jQuery(function( $ ){
     })
   };
 
-  $("a[class*='area-of-greatest-need-donate-btn']").on('click', function() {
-      console.log('This too, means that the buttion has been click, load some javascript');
+  console.log($("a[class*='area-of-greatest-need-donate-btn']").text());
+
+  $("div[data-rel='#1622854675728-d553932b-3eb7']").on('click', function(e) {
+    console.log('Updating button to say "Give to ..."');
+    $("a[class*='area-of-greatest-need-donate-btn']").text('Give to the Area of Greatest Need');
   });
+
+  $("a[class*='area-of-greatest-need-donate-btn']").each(function(index, element) {
+    console.log( index + ": " + $(this).text() );
+  });
+
+  $("a[class*='area-of-greatest-need-donate-btn']").on('click', function(element) {
+    console.log($(this).text());
+    console.log('This too, means that the button has been click, load some javascript');
+    console.log('What is this: ' + $('#kindful-iframe').contents().length);
+    console.log('What is this: ' + $('iframe').contents().length);
+
+
+  });
+  /*
+   * Need to find when iframe is loaded
+  $('document.body').on('click', function() {
+    console.log('What is this2: ' + $('#kindful-iframe').contents().length);
+    console.log('What is this2: ' + $('iframe').contents().length);
+  });
+  */
+
+
+
 
   console.log('finishing');
 
