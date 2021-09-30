@@ -12,10 +12,7 @@ jQuery(function( $ ){
   console.log($('div.grve-element.grve-align-left').attr('class'));
   console.log('anchor class: ' + $('div.grve-element.grve-align-left').children('a').first().attr('class'));
 
-  //Next: add js on click of give putton
-  //https://api.jquery.com/jquery.getscript/
 
-  /*
   $('div.grve-element.grve-align-left').children('a').first().on('click', function () {
     console.log("Division's (anchor) buttion has been click, load some javascript");
   });
@@ -33,18 +30,37 @@ jQuery(function( $ ){
     $("a[class*='area-of-greatest-need-donate-btn']").text('Give to the Area of Greatest Need');
   });
 
+  $("a[class*='area-of-greatest-need-donate-btn']").click(function(){
+    alert('You have chosen "Area of Greatest Need"');
+    console.log('You have chosen "Area of Greatest Need"');
+  });
+
+
+  $(document).on('mouseover', 'iframe', function(event) {
+    console.log('mouseover once: an iframe has been loaded - untouchable by jQuery (cross-domain)');
+    console.log($('iframe').attr('id'));
+    console.log($('iframe').attr('src'));
+    //alert('You have chosen "Area of Greatest Need"');
+    $(this).off(event);
+  });
+
   $("a[class*='area-of-greatest-need-donate-btn']").each(function(index, element) {
     console.log( index + ": " + $(this).text() );
+  });
+  $(document).on('click',"div.dynamic", function(e){
+    console.log("click: Dynamic div clicked and turning purple.");
+    $(this).css('color', 'purple');
   });
 
   $("a[class*='area-of-greatest-need-donate-btn']").on('click', function(element) {
     console.log($(this).text());
     console.log('This too, means that the button has been click, load some javascript');
     console.log('Appending dynamic division');
-    //$('<div class="dynamic">Dynamic Div</div><br/>').appendTo('body');
+    // $('<div class="dynamic">Dynamic Div</div><br/>').appendTo('body');
     $('div.dynamic').css('color','red');
   });
 
+  /*
   // https://forum.jquery.com/topic/changing-css-in-iframe-with-jquery
   // https://www.learningjquery.com/2017/04/how-to-change-iframe-styling-using-jquery
   $('body').on("click","div.dynamic", function(){
