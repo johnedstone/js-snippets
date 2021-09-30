@@ -12,6 +12,10 @@ jQuery(function( $ ){
   console.log($('div.grve-element.grve-align-left').attr('class'));
   console.log('anchor class: ' + $('div.grve-element.grve-align-left').children('a').first().attr('class'));
 
+  //Next: add js on click of give putton
+  //https://api.jquery.com/jquery.getscript/
+
+  /*
   $('div.grve-element.grve-align-left').children('a').first().on('click', function () {
     console.log("Division's (anchor) buttion has been click, load some javascript");
   });
@@ -36,11 +40,31 @@ jQuery(function( $ ){
   $("a[class*='area-of-greatest-need-donate-btn']").on('click', function(element) {
     console.log($(this).text());
     console.log('This too, means that the button has been click, load some javascript');
-    console.log('What is this: ' + $('#kindful-iframe').contents().length);
-    console.log('What is this: ' + $('iframe').contents().length);
-
-
+    console.log('Appending dynamic division');
+    //$('<div class="dynamic">Dynamic Div</div><br/>').appendTo('body');
+    $('div.dynamic').css('color','red');
   });
+
+  // https://forum.jquery.com/topic/changing-css-in-iframe-with-jquery
+  // https://www.learningjquery.com/2017/04/how-to-change-iframe-styling-using-jquery
+  $('body').on("click","div.dynamic", function(){
+    console.log("click: Dynamic div loaded.");
+  });
+  $('body').on("load","div.dynamic", function(){
+    console.log("loaded: Dynamic div loaded.");
+  });
+  $(document).on("load","div", function(){
+    console.log("loaded: Dynamic div loaded.");
+  });
+
+
+  // https://www.learningjquery.com/2017/02/jquery-on-method-the-issue-of-dynamically-added-elements
+  $('body').on('load', '#kindful-iframe', function() {
+    console.log('an iframe has been loaded');
+  });
+  // jQuery(function($){console.log($('iframe').attr('id'))})
+  */
+
   /*
    * Need to find when iframe is loaded
   $('document.body').on('click', function() {
