@@ -35,13 +35,17 @@ jQuery(function( $ ){
     console.log('You have chosen "Area of Greatest Need"');
   });
 
+  //$('iframe').css('background-image', "url('wp-content/uploads/2021/09/area_transparent.png')");
+
 
   $(document).on('mouseover', 'iframe', function(event) {
     console.log('mouseover once: an iframe has been loaded - untouchable by jQuery (cross-domain)');
     console.log($('iframe').attr('id'));
     console.log($('iframe').attr('src'));
+    //$('iframe').css('background-color', 'yellow');
+    $('iframe').css('background-image', "url('wp-content/uploads/2021/09/area_transparent.png')");
     //alert('You have chosen "Area of Greatest Need"');
-    $(this).off(event);
+    // $(this).off(event);
   });
 
   $("a[class*='area-of-greatest-need-donate-btn']").each(function(index, element) {
