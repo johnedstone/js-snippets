@@ -27,15 +27,17 @@ jQuery(function( $ ){
 
   $("div[data-rel='#1622854675728-d553932b-3eb7']").on('click', function(e) {
     console.log('Updating button to say "Give to ..."');
-    $("a[class*='area-of-greatest-need-donate-btn']").text('Give to the Area of Greatest Need');
+    // This does update the Give button if one wants to do it this way: works!
+    //$("a[class*='area-of-greatest-need-donate-btn']").text('Give to the Area of Greatest Need');
   });
 
   $("a[class*='area-of-greatest-need-donate-btn']").click(function(){
-    alert('You have chosen "Area of Greatest Need"');
+    // This is simply an alert - works!
+    // alert('You have chosen "Area of Greatest Need"');
     console.log('You have chosen "Area of Greatest Need"');
   });
 
-  //$('iframe').css('background-image', "url('wp-content/uploads/2021/09/area_transparent.png')");
+  //$('iframe').css('background-image', "url('wp-content/uploads/2021/09/area_transparent2.png')");
 
 
   $(document).on('mouseover', 'iframe', function(event) {
@@ -43,7 +45,8 @@ jQuery(function( $ ){
     console.log($('iframe').attr('id'));
     console.log($('iframe').attr('src'));
     //$('iframe').css('background-color', 'yellow');
-    $('iframe').css('background-image', "url('wp-content/uploads/2021/09/area_transparent.png')");
+    $('iframe').css('background-image', "url('wp-content/uploads/2021/09/area_transparent2.png')");
+    $('iframe').css('background-repeat', "no-repeat");
     //alert('You have chosen "Area of Greatest Need"');
     // $(this).off(event);
   });
